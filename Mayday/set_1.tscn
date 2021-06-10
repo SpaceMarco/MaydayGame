@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://damage.gd" type="Script" id=1]
+[ext_resource path="res://movedown.gd" type="Script" id=2]
+[ext_resource path="res://comets.png" type="Texture" id=5]
+[ext_resource path="res://oxygenGen.tscn" type="PackedScene" id=10]
+
+[node name="set_1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="oxygenGen2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 684.36, 189.905 )
+
+[node name="comet 1" type="StaticBody2D" parent="."]
+position = Vector2( 603.048, 280.65 )
+scale = Vector2( 0.88, 0.88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="comets" type="Sprite" parent="comet 1"]
+position = Vector2( 0.881104, 5.41171 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 24.342, 71.1861, 259.487, 286.413 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="comet 1"]
+position = Vector2( -570.344, -252.505 )
+polygon = PoolVector2Array( 555.324, 224.36, 561.276, 221.78, 570.404, 221.383, 572.785, 219.201, 584.492, 221.383, 585.881, 225.55, 593.024, 232.297, 599.374, 240.631, 601.557, 240.829, 605.327, 248.965, 603.541, 252.338, 602.35, 264.243, 599.771, 273.569, 593.421, 283.292, 582.905, 291.031, 580.921, 294.206, 572.388, 296.388, 565.047, 294.007, 556.911, 291.428, 550.165, 286.864, 545.402, 286.07, 539.648, 279.72, 540.243, 269.998, 538.656, 260.87, 540.045, 252.933, 538.854, 249.163, 543.021, 239.242, 545.998, 237.456, 550.561, 229.519 )
+
+[node name="Area2D" type="Area2D" parent="comet 1"]
+position = Vector2( -570.344, -252.505 )
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="comet 1/Area2D"]
+position = Vector2( -34.7978, -15.6103 )
+scale = Vector2( 1.06026, 1.06026 )
+polygon = PoolVector2Array( 555.324, 224.36, 561.276, 221.78, 570.404, 221.383, 572.785, 219.201, 584.492, 221.383, 585.881, 225.55, 593.024, 232.297, 599.374, 240.631, 601.557, 240.829, 605.327, 248.965, 603.541, 252.338, 602.35, 264.243, 599.771, 273.569, 593.421, 283.292, 582.905, 291.031, 580.921, 294.206, 572.388, 296.388, 565.047, 294.007, 556.911, 291.428, 550.165, 286.864, 545.402, 286.07, 539.648, 279.72, 540.243, 269.998, 538.656, 260.87, 540.045, 252.933, 538.854, 249.163, 543.021, 239.242, 545.998, 237.456, 550.561, 229.519 )
+
+[node name="comet 2" type="StaticBody2D" parent="."]
+position = Vector2( 451.583, 129.798 )
+scale = Vector2( 0.88, 0.88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="comets" type="Sprite" parent="comet 2"]
+position = Vector2( 0.881104, 5.41171 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 73.391, 423.369, 195.21, 198.893 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="comet 2"]
+polygon = PoolVector2Array( -0.769745, 28.1491, 16.5925, 20.9336, 18.3963, 17.1004, 20.2002, 5.82625, 24.4844, -3.19307, 21.1021, -15.5946, 12.9847, -18.9769, -10.9165, -12.6634, -17.681, -7.92822, -20.6123, 0.414658, -22.8671, 18.2278, -20.6123, 24.9923, -13.3968, 29.502 )
+
+[node name="Area2D" type="Area2D" parent="comet 2"]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="comet 2/Area2D"]
+scale = Vector2( 1.12325, 1.12325 )
+polygon = PoolVector2Array( -0.769745, 28.1491, 16.5925, 20.9336, 18.3963, 17.1004, 20.2002, 5.82625, 24.4844, -3.19307, 21.1021, -15.5946, 12.9847, -18.9769, -10.9165, -12.6634, -17.681, -7.92822, -20.6123, 0.414658, -22.8671, 18.2278, -20.6123, 24.9923, -13.3968, 29.502 )
+
+[node name="comet 3" type="StaticBody2D" parent="."]
+position = Vector2( 280.623, 204.583 )
+scale = Vector2( 0.88, 0.88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="comets" type="Sprite" parent="comet 3"]
+position = Vector2( 0.881104, 5.41171 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 334.727, 128.425, 255.75, 220.381 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="comet 3"]
+polygon = PoolVector2Array( -27.8343, 6.99561, -27.1177, -10.2045, -13.7398, -21.4324, 12.5382, -6.62119, 24.9606, -7.81561, 33.0829, -2.32114, 31.4106, 7.95117, 22.8105, 22.5235, 12.5382, 28.7347, 1.31036, 25.868 )
+
+[node name="Area2D" type="Area2D" parent="comet 3"]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="comet 3/Area2D"]
+position = Vector2( -0.0863342, -0.0132103 )
+scale = Vector2( 1.04209, 1.133 )
+polygon = PoolVector2Array( -27.8343, 6.99561, -27.1177, -10.2045, -13.7185, -20.2413, 12.5382, -6.62119, 24.9606, -7.81561, 33.0829, -2.32114, 31.4106, 7.95117, 22.8105, 22.5235, 12.4446, 27.0421, 0.663574, 23.8055 )

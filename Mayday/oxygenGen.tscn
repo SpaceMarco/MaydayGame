@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://draw.gd" type="Script" id=1]
+[ext_resource path="res://circle.png" type="Texture" id=2]
+[ext_resource path="res://sprites.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 176.116
+
+[node name="oxygenGen" type="Position2D"]
+position = Vector2( 337.651, 119.38 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 0.32, 0.32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Area2D"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 53.336, 120.78, 60.2279, 60.2204 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="circle" type="Sprite" parent="Area2D"]
+position = Vector2( -0.971924, 0.046875 )
+scale = Vector2( 0.574122, 0.574122 )
+texture = ExtResource( 2 )

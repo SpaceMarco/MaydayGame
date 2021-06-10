@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://boom.gd" type="Script" id=1]
+[ext_resource path="res://frames explosion/boom0002.png" type="Texture" id=2]
+[ext_resource path="res://frames explosion/boom0004.png" type="Texture" id=3]
+[ext_resource path="res://frames explosion/boom0005.png" type="Texture" id=4]
+[ext_resource path="res://frames explosion/boom0001.png" type="Texture" id=5]
+[ext_resource path="res://frames explosion/boom0003.png" type="Texture" id=6]
+[ext_resource path="res://frames explosion/boom0006.png" type="Texture" id=7]
+[ext_resource path="res://frames explosion/boom0000.png" type="Texture" id=8]
+[ext_resource path="res://frames explosion/boom000-1(2).png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "normal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "boom",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.9553
+
+[node name="rock2" type="Area2D"]
+position = Vector2( 318.76, 75.5953 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.29779, -3.18558 )
+scale = Vector2( 0.466678, 0.466678 )
+frames = SubResource( 2 )
+animation = "normal"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
